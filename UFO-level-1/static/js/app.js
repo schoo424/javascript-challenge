@@ -60,6 +60,30 @@ filteredData = tableData;
         filteredData = filteredData.filter(row=> row.shape == shapeValue)
     };
 
+  //optional part --> adding 'city'
+    var cityElement = d3.select("#city");    
+
+    // Get the value property of the input element
+        var cityValue = cityElement.property("value");
+        console.log(cityValue);   
+
+    //filtering of the data 
+    if(cityValue){
+        filteredData = filteredData.filter(row=> row.city == cityValue)
+    };
+
+  //optional part --> adding 'state'
+    var stateElement = d3.select("#state");    
+
+    // Get the value property of the input element
+        var stateValue = stateElement.property("value");
+        console.log(stateValue);   
+
+    //filtering of the data 
+    if(stateValue){
+        filteredData = filteredData.filter(row=> row.state == stateValue)
+    };
+
     filteredData.forEach(function(UFOData) {
         console.log(UFOData);
         var row = tbody.append("tr");
@@ -72,5 +96,6 @@ filteredData = tableData;
   });
 
 };
+
 
 
